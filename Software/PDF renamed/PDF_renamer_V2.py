@@ -27,6 +27,9 @@ output_folder = os.path.join("PDF renamed")
 # Create the output folder if it doesn't exist
 os.makedirs(output_folder, exist_ok=True)
 
+# Create the imput folder
+os.makedirs(pdf_folder, exist_ok=True)
+
 # Create a temporary directory for the text files
 temp_dir = tempfile.mkdtemp()
 
@@ -68,7 +71,7 @@ with tqdm(total=total_files, leave=True, desc="Renaming") as pbar:
             lines = text_file.readlines()
 
         # Get the value of a specific line (line CUIL in this example)
-        line_number = 44
+        line_number = 13
         if line_number < len(lines):
             cuil_value = lines[line_number].rstrip().replace(
                 '-', '')  # Remove dash character
@@ -97,7 +100,7 @@ with tqdm(total=total_files, leave=True, desc="Renaming") as pbar:
             continue
 
         # Delete the text file
-        os.remove(text_path)
+        # os.remove(text_path)
 
         # Update the progress bar description with the filename and new name of the file that is being processed
         pbar.set_description(f"Renaming {pdf_filename} to {new_filename}...")
@@ -109,4 +112,4 @@ with tqdm(total=total_files, leave=True, desc="Renaming") as pbar:
 shutil.rmtree(temp_dir)
 
 # Add a screen pause at the end of the script
-input("Press Enter to close the program...")
+input("Press Enter to close the program...Thanks for use a Labtech Software Dev")
