@@ -68,7 +68,7 @@ with tqdm(total=total_files, leave=True, desc="Renaming") as pbar:
             lines = text_file.readlines()
 
         # Get the value of a specific line (line CUIL in this example)
-        line_number = 38
+        line_number = 44
         if line_number < len(lines):
             cuil_value = lines[line_number].rstrip().replace(
                 '-', '')  # Remove dash character
